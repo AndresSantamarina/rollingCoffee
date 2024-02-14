@@ -7,6 +7,7 @@ import Error404 from "./components/pages/Error404";
 import Administrador from "./components/pages/Administrador";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+//npx json-server db.json
 
 function App() {
   return (
