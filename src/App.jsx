@@ -6,18 +6,29 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Error404 from "./components/pages/Error404";
 import Administrador from "./components/pages/Administrador";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <section className="contenedor">
-      <div className="contenido">
-        <Menu />
-        <Inicio />
-        {/* <Administrador/> */}
-        {/* <Error404/> */}
-      </div>
+    <BrowserRouter>
+      <Menu />
+      <Routes>
+        <Route exact path="/" element={<Inicio />}></Route>
+        <Route exact path="/administrador" element={<Administrador />}></Route>
+        <Route path="*" element={<Error404 />}></Route>
+      </Routes>
       <Footer />
-    </section>
+    </BrowserRouter>
+
+    // <section className="contenedor">
+    //   <div className="contenido">
+    //     <Menu />
+    //     <Inicio />
+    //     {/* <Administrador/> */}
+    //     {/* <Error404/> */}
+    //   </div>
+    //   <Footer />
+    // </section>
   );
 }
 
