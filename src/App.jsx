@@ -12,8 +12,8 @@ function App() {
     <section className="contenedor">
       <div className="contenido">
         <Menu />
-        {/* <Inicio /> */}
-        <Administrador/>
+        <Inicio />
+        {/* <Administrador/> */}
         {/* <Error404/> */}
       </div>
       <Footer />

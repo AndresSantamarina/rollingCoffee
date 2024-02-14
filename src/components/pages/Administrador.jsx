@@ -1,5 +1,4 @@
 import { Button, Container, Table } from "react-bootstrap";
-import iconoAgregar from "bootstrap-icons/icons/file-earmark-plus.svg";
 import cafe from "../../assets/cafeAmericano.webp";
 import capuchino from "../../assets/capuccino.jpg";
 import croissant from "../../assets/croissantChocolate.jpg";
