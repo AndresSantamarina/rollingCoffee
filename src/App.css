@@ -1,9 +1,28 @@
+html,
+body,
 #root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  margin: 0;
 }
 
-.mainPage {
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.contenido {
   flex-grow: 1;
+}
+
+.banner {
+  height: 400px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@media (max-width: 575.98px) {
+  .banner {
+    height: fit-content;
+  }
 }
