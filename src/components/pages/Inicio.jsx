@@ -4,21 +4,19 @@ import CardProducto from "./producto/CardProducto";
 
 const Inicio = () => {
   return (
-    <>
-      <section className="banner mb-4">
+    <section className="mainSection">
+      <article className="banner mb-4">
         <img src={banner} alt="imagen de la cafetería" className="img-fluid " />
-      </section>
+      </article>
       <Container>
         <h1 className="mb-4 display-4">Nuestros Productos</h1>
-        <section>
-          <Row>
-            <CardProducto />
-            <CardProducto />
-            <CardProducto />
-          </Row>
-        </section>
+        <Row>
+          <CardProducto />
+          <CardProducto />
+          <CardProducto />
+        </Row>
       </Container>
-    </>
+    </section>
   );
 };
 

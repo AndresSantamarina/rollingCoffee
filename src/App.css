@@ -1,17 +1,16 @@
-html,
+/* html,
 body,
 #root {
   height: 100%;
   margin: 0;
-}
+} */
 
-.contenedor {
+#root {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
 }
-
-.contenido {
+.mainSection {
   flex-grow: 1;
 }
 
