@@ -3,15 +3,16 @@ import cafe from "../../assets/cafeAmericano.webp";
 import capuchino from "../../assets/capuccino.jpg";
 import croissant from "../../assets/croissantChocolate.jpg";
 import teVerde from "../../assets/teVerde.webp";
+import { Link } from "react-router-dom";
 
 const Administrador = () => {
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center">
         <h1 className="display-5 my-3">Productos disponibles</h1>
-        <Button>
+        <Link to="formulario" className="my-3 btn btn-primary">
           <i className="bi bi-file-earmark-plus"></i>
-        </Button>
+        </Link>
       </div>
 
       <Table responsive bordered hover className="text-center">
@@ -35,8 +36,13 @@ const Administrador = () => {
             </td>
             <td>Bebida caliente</td>
             <td className="text-center">
-              <i className="bi bi-pencil-square bg-warning p-2 rounded m-2"></i>
-              <i className="bi bi-trash3 bg-danger p-2 rounded m-2"></i>
+              <Link to="" className="my-3 btn btn-warning">
+                {" "}
+                <i className="bi bi-pencil-square p-2 rounded m-2"></i>
+              </Link>
+              <Button className="my-3 btn btn-danger">
+                <i className="bi bi-trash3 p-2 rounded m-2"></i>
+              </Button>
             </td>
           </tr>
           <tr>
@@ -53,8 +59,13 @@ const Administrador = () => {
             </td>
             <td>Bebida caliente</td>
             <td className="text-center">
-              <i className="bi bi-pencil-square bg-warning p-2 rounded m-2"></i>
-              <i className="bi bi-trash3 bg-danger p-2 rounded m-2"></i>
+              <Link to="" className="my-3 btn btn-warning">
+                {" "}
+                <i className="bi bi-pencil-square p-2 rounded m-2"></i>
+              </Link>
+              <Button className="my-3 btn btn-danger">
+                <i className="bi bi-trash3 p-2 rounded m-2"></i>
+              </Button>
             </td>
           </tr>
           <tr>
@@ -71,8 +82,13 @@ const Administrador = () => {
             </td>
             <td>Repostería</td>
             <td className="text-center">
-              <i className="bi bi-pencil-square bg-warning p-2 rounded m-2"></i>
-              <i className="bi bi-trash3 bg-danger p-2 rounded m-2"></i>
+              <Link to="" className="my-3 btn btn-warning">
+                {" "}
+                <i className="bi bi-pencil-square p-2 rounded m-2"></i>
+              </Link>
+              <Button className="my-3 btn btn-danger">
+                <i className="bi bi-trash3 p-2 rounded m-2"></i>
+              </Button>
             </td>
           </tr>
           <tr>
@@ -89,8 +105,13 @@ const Administrador = () => {
             </td>
             <td>Bebida caliente</td>
             <td className="text-center">
-              <i className="bi bi-pencil-square bg-warning p-2 rounded m-2"></i>
-              <i className="bi bi-trash3 bg-danger p-2 rounded m-2"></i>
+              <Link to="" className="my-3 btn btn-warning">
+                {" "}
+                <i className="bi bi-pencil-square p-2 rounded m-2"></i>
+              </Link>
+              <Button className="my-3 btn btn-danger">
+                <i className="bi bi-trash3 p-2 rounded m-2"></i>
+              </Button>
             </td>
           </tr>
         </tbody>

@@ -12,15 +12,9 @@ const Inicio = () => {
         <h1 className="mb-4 display-4">Nuestros Productos</h1>
         <section>
           <Row>
-            <Col>
-              <CardProducto />
-            </Col>
-            <Col>
-              <CardProducto />
-            </Col>
-            <Col>
-              <CardProducto />
-            </Col>
+            <CardProducto />
+            <CardProducto />
+            <CardProducto />
           </Row>
         </section>
       </Container>
