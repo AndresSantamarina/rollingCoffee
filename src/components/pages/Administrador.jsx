@@ -4,8 +4,18 @@ import capuchino from "../../assets/capuccino.jpg";
 import croissant from "../../assets/croissantChocolate.jpg";
 import teVerde from "../../assets/teVerde.webp";
 import { Link } from "react-router-dom";
+import "../../helpers/queries";
+import "../pages/producto/ItemProducto";
+import { useState, useEffect } from "react";
+import { leerProductosAPI } from "../../helpers/queries";
 
 const Administrador = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    leerProductosAPI();
+  }, []);
+
   return (
     <Container>
       <div className="d-flex justify-content-between align-items-center">
