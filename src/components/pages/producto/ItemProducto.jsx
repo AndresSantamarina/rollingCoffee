@@ -1,19 +1,15 @@
 import { Button } from "react-bootstrap";
-import cafe from "../../../assets/cafeAmericano.webp";
-import capuchino from "../../../assets/capuccino.jpg";
-import croissant from "../../../assets/croissantChocolate.jpg";
-import teVerde from "../../../assets/teVerde.webp";
 
-const ItemProducto = () => {
+const ItemProducto = ({producto}) => {
   return (
     <tr>
-      <td className="text-center">1</td>
-      <td>Café americano</td>
-      <td className="text-end">$250</td>
+      <td className="text-center">{producto.id}</td>
+      <td>{producto.nombreProducto}</td>
+      <td className="text-end">{producto.precio}</td>
       <td className="text-center">
-        <img src={cafe} alt="cafe" className="img-thumbnail" />
+        <img src={producto.imagen} alt={producto.nombreProducto} className="img-thumbnail" />
       </td>
-      <td>Bebida caliente</td>
+      <td>{producto.categoria}</td>
       <td className="text-center">
         <Button variant="warning" className="me-lg-2">
           <i className="bi bi-pencil-square"></i>

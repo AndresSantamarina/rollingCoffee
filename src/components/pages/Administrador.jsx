@@ -1,20 +1,26 @@
-import { Button, Container, Table } from "react-bootstrap";
-import cafe from "../../assets/cafeAmericano.webp";
-import capuchino from "../../assets/capuccino.jpg";
-import croissant from "../../assets/croissantChocolate.jpg";
-import teVerde from "../../assets/teVerde.webp";
+import { Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../helpers/queries";
 import "../pages/producto/ItemProducto";
 import { useState, useEffect } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
+import ItemProducto from "../pages/producto/ItemProducto";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    leerProductosAPI();
+    consultarAPI();
   }, []);
+
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await leerProductosAPI();
+      setProductos(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Container>
@@ -37,8 +43,22 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
+          {productos.map((producto) => 
+            <ItemProducto key={producto.id} producto={producto} />)
+          }
+        </tbody>
+      </Table>
+    </Container>
+  );
+};
+
+export default Administrador;
+
+{
+  /* <tr> */
+}
+{
+  /* <td>1</td>
             <td>Café americano</td>
             <td>$250</td>
             <td>
@@ -122,12 +142,8 @@ const Administrador = () => {
               <Button className="my-3 btn btn-danger">
                 <i className="bi bi-trash3 p-2 rounded m-2"></i>
               </Button>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
-    </Container>
-  );
-};
-
-export default Administrador;
+            </td> */
+}
+{
+  /* </tr> */
+}

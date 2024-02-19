@@ -2,7 +2,7 @@
   "productos": [
     {
       "id": "1",
-      "nombreProducto": "café",
+      "nombreProducto": "Café",
       "precio": 1500,
       "categoria": "Infusiones",
       "descripcionBreve": "Una taza de café suave y aromático.",
@@ -11,7 +11,7 @@
     },
     {
       "id": "2",
-      "nombreProducto": "té",
+      "nombreProducto": "Té",
       "precio": 1000,
       "categoria": "Infusiones",
       "descripcionBreve": "Una taza de té suave y aromático.",
