@@ -26,7 +26,7 @@ const FormularioProducto = () => {
       Swal.fire({
         title: "Ocurrió un error",
         text: `El producto ${producto.nombreProducto} no pudo ser creado, intente esta operación en unos minutos.`,
-        icon: "fail",
+        icon: "error",
       });
     }
   };

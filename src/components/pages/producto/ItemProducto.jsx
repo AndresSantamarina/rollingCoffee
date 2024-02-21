@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 import { borrarProductoAPI } from "../../../helpers/queries";
 
 const ItemProducto = ({ producto }) => {
-  
   const borrarProducto = () => {
     Swal.fire({
       title: "Estás seguro de eliminar el producto?",
@@ -14,16 +13,25 @@ const ItemProducto = ({ producto }) => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Borrar",
       cancelButtonText: "Salir",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         //Agregar la lógica si quiero borrar
-        borrarProductoAPI(producto.id);
+        const respuesta = await borrarProductoAPI(producto.id);
+        if(respuesta.status === 200){
+          Swal.fire({
+            title: "Producto eliminado!",
+            text: `El producto "${producto.nombreProducto}" fue eliminado correctamente`,
+            icon: "success",
+          });
+        }else{
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: `El producto "${producto.nombreProducto}" no fue eliminado, intente realizar esta operación en unos minutos`,
+            icon: "error",
+          });
+        }
 
-        Swal.fire({
-          title: "Producto eliminado!",
-          text: `El producto "${producto.nombreProducto}" fue eliminado correctamente`,
-          icon: "success",
-        });
+       
       }
     });
   };
