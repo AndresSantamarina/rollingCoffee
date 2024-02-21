@@ -1,18 +1,34 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../../helpers/queries";
+import Swal from "sweetalert2";
 
 const FormularioProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const productoValidado = (producto) => {
+  const productoValidado = async (producto) => {
     console.log(producto);
     //solicitar a la api guardar un producto nuevo
-    crearProductoAPI(producto);
+    const respuesta = await crearProductoAPI(producto);
+    if (respuesta.status === 201) {
+      Swal.fire({
+        title: "Producto creado",
+        text: `El producto ${producto.nombreProducto} fue creado correctamente`,
+        icon: "success",
+      });
+      reset();
+    } else {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: `El producto ${producto.nombreProducto} no pudo ser creado, intente esta operación en unos minutos.`,
+        icon: "fail",
+      });
+    }
   };
 
   return (
@@ -47,7 +63,7 @@ const FormularioProducto = () => {
           <Form.Label>Precio*</Form.Label>
           <Form.Control
             type="number"
-            placeholder="Ej: 50"
+            placeholder="Ej: 100"
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
