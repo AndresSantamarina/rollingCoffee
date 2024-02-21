@@ -17,6 +17,15 @@
       "descripcionBreve": "Una taza de té suave y aromático.",
       "descripcionAmplia": "Una taza de té suave y aromático con más detalles",
       "imagen": "url"
+    },
+    {
+      "id": "5942",
+      "nombreProducto": "Mate",
+      "precio": "300",
+      "imagen": "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "ffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "descripcionAmplia": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
     }
   ]
 }
