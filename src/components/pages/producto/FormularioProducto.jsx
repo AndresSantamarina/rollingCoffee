@@ -90,8 +90,8 @@ const FormularioProducto = () => {
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
@@ -106,12 +106,12 @@ const FormularioProducto = () => {
             {...register("descripcionBreve", {
               required: "La descripción breve del producto es obligatoria",
               minLength: {
-                value: 20,
+                value: 10,
                 message:
                   "La descripción breve del producto debe tener como mínimo 20 caracteres",
               },
               maxLength: {
-                value: 100,
+                value: 50,
                 message:
                   "La descripción breve del producto debe tener como máximo 100 caracteres",
               },
@@ -130,12 +130,12 @@ const FormularioProducto = () => {
             {...register("descripcionAmplia", {
               required: "La descripción amplia del producto es obligatorio",
               minLength: {
-                value: 150,
+                value: 100,
                 message:
                   "La descripción amplia del producto debe tener como mínimo 150 caracteres",
               },
               maxLength: {
-                value: 600,
+                value: 400,
                 message:
                   "La descripción amplia del producto debe tener como máximo 600 caracteres",
               },
