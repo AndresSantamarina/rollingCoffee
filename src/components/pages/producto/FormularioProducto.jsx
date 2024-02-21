@@ -69,16 +69,10 @@ const FormularioProducto = () => {
             type="text"
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
             {...register("imagen", {
-              required: "La URL de la imagen es obligatoria",
-              minLength: {
-                value: 5,
-                message:
-                  "La URL de la imagen debe de ser mayor a los 5 caracteres",
-              },
-              maxLength: {
-                value: 500,
-                message:
-                  "La URL de la imagen debe de ser menor a los 500 caracteres",
+              required: "La imagen es obligatoria",
+              pattern: {
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
+                message: "Debe ingresar una URL valida (jpg|jpeg|gif|png)",
               },
             })}
           />
@@ -88,9 +82,11 @@ const FormularioProducto = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCategoria">
           <Form.Label>Categoría*</Form.Label>
-          <Form.Select {...register("categoria",{
-            required: "Seleccione una opción válida"
-          })}>
+          <Form.Select
+            {...register("categoria", {
+              required: "Seleccione una opción válida",
+            })}
+          >
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
