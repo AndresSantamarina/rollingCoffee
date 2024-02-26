@@ -14,6 +14,18 @@ export const leerProductosAPI = async () => {
     }
 };
 
+//GET devuelve un producto
+export const obtenerProductoAPI = async (id) => {
+    try {
+        const respuesta = await fetch(URL_Productos + '/' + id);
+        console.log(respuesta)
+        return respuesta
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
 //POST
 export const crearProductoAPI = async (productoNuevo) => {
     try {
