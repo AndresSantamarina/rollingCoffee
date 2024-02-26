@@ -19,13 +19,13 @@
       "imagen": "url"
     },
     {
-      "id": "5942",
       "nombreProducto": "Mate",
-      "precio": "300",
+      "precio": "700",
       "imagen": "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg",
       "categoria": "Infusiones",
       "descripcionBreve": "ffffffffffffffffffffffffffffffffffffffffffffffffff",
-      "descripcionAmplia": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      "descripcionAmplia": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "id": "5942"
     }
   ]
 }
