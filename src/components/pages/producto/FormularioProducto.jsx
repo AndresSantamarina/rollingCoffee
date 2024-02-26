@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
-const FormularioProducto = ({ editar }) => {
+const FormularioProducto = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
@@ -15,7 +15,7 @@ const FormularioProducto = ({ editar }) => {
     console.log(producto);
     if (editar === true) {
       //agregar la logica cuando edito
-      console.log("Aqui tengo que editar")
+      console.log("Aqui tengo que editar");
     } else {
       //solicitar a la api guardar un producto nuevo
       const respuesta = await crearProductoAPI(producto);
@@ -38,7 +38,7 @@ const FormularioProducto = ({ editar }) => {
 
   return (
     <section className="container mainSection">
-      <h1 className="display-4 mt-5">Nuevo producto</h1>
+      <h1 className="display-4 mt-5">{titulo}</h1>
       <hr />
       <Form className="my-4" onSubmit={handleSubmit(productoValidado)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">

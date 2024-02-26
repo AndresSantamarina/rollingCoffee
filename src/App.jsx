@@ -9,6 +9,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import DetalleProducto from "./components/pages/producto/DetalleProducto";
+import Login from "./components/pages/producto/Login";
 //npx json-server db.json
 
 function App() {
@@ -21,28 +22,23 @@ function App() {
         <Route
           exact
           path="/administrador/crear"
-          element={<FormularioProducto editar={false}/>}
+          element={
+            <FormularioProducto editar={false} titulo="Nuevo producto" />
+          }
         ></Route>
         <Route
           exact
           path="/administrador/editar/:id"
-          element={<FormularioProducto editar={true}/>}
+          element={
+            <FormularioProducto editar={true} titulo="Editar producto" />
+          }
         ></Route>
         <Route exact path="/detalle" element={<DetalleProducto />}></Route>
+        <Route exact path="/login" element={<Login />}></Route>
         <Route path="*" element={<Error404 />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
-
-    // <section className="contenedor">
-    //   <div className="contenido">
-    //     <Menu />
-    //     <Inicio />
-    //     {/* <Administrador/> */}
-    //     {/* <Error404/> */}
-    //   </div>
-    //   <Footer />
-    // </section>
   );
 }
 
