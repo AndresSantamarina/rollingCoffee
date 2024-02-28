@@ -33,7 +33,7 @@ function App() {
             <FormularioProducto editar={true} titulo="Editar producto" />
           }
         ></Route>
-        <Route exact path="/detalle" element={<DetalleProducto />}></Route>
+        <Route exact path="/detalle/:id" element={<DetalleProducto />}></Route>
         <Route exact path="/login" element={<Login />}></Route>
         <Route path="*" element={<Error404 />}></Route>
       </Routes>
