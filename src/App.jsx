@@ -10,12 +10,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import DetalleProducto from "./components/pages/producto/DetalleProducto";
 import Login from "./components/pages/producto/Login";
+import { useState } from "react";
 //npx json-server db.json
 
 function App() {
+  const usuario =
+    JSON.parse(sessionStorage.getItem("usuarioRollingCoffee")) || "";
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+
   return (
     <BrowserRouter>
-      <Menu />
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}/>
       <Routes>
         <Route exact path="/" element={<Inicio />}></Route>
         <Route exact path="/administrador" element={<Administrador />}></Route>
@@ -34,7 +39,11 @@ function App() {
           }
         ></Route>
         <Route exact path="/detalle/:id" element={<DetalleProducto />}></Route>
-        <Route exact path="/login" element={<Login />}></Route>
+        <Route
+          exact
+          path="/login"
+          element={<Login setUsuarioLogueado={setUsuarioLogueado} />}
+        ></Route>
         <Route path="*" element={<Error404 />}></Route>
       </Routes>
       <Footer />
