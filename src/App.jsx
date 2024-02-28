@@ -11,6 +11,8 @@ import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import DetalleProducto from "./components/pages/producto/DetalleProducto";
 import Login from "./components/pages/producto/Login";
 import { useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 //npx json-server db.json
 
 function App() {
@@ -20,22 +22,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}/>
+      <Menu
+        usuarioLogueado={usuarioLogueado}
+        setUsuarioLogueado={setUsuarioLogueado}
+      />
       <Routes>
         <Route exact path="/" element={<Inicio />}></Route>
-        <Route exact path="/administrador" element={<Administrador />}></Route>
         <Route
           exact
-          path="/administrador/crear"
+          path="/administrador/*"
           element={
-            <FormularioProducto editar={false} titulo="Nuevo producto" />
-          }
-        ></Route>
-        <Route
-          exact
-          path="/administrador/editar/:id"
-          element={
-            <FormularioProducto editar={true} titulo="Editar producto" />
+            <RutasProtegidas>
+              <RutasAdmin />
+            </RutasProtegidas>
           }
         ></Route>
         <Route exact path="/detalle/:id" element={<DetalleProducto />}></Route>
