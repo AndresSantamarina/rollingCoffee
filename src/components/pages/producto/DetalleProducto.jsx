@@ -38,16 +38,12 @@ const DetalleProducto = () => {
               <Card.Title className="fw-bold">
                 {producto ? producto.nombreProducto : "Cargando..."}
               </Card.Title>
-              <Card.Text>
-                <p className="descripcionAmplia">
-                  {producto ? producto.descripcionAmplia : "Cargando..."}
-                </p>
-                <p>
-                  {" "}
-                  <span className="text-success fw-bold"> Categoría: </span>
-                  {producto ? producto.categoria : "Cargando..."} <br />
-                  <span className="text-success fw-bold">Precio: $</span>  {producto ? producto.precio : "Cargando..."}
-                </p>
+              <Card.Text className="descripcionAmplia">
+                {producto ? producto.descripcionAmplia : "Cargando..."}{" "}
+                <span className="text-success fw-bold"> Categoría: </span>
+                {producto ? producto.categoria : "Cargando..."} <br />
+                <span className="text-success fw-bold">Precio: $</span>{" "}
+                {producto ? producto.precio : "Cargando..."}
               </Card.Text>
             </Card.Body>
           </Col>
@@ -58,3 +54,15 @@ const DetalleProducto = () => {
 };
 
 export default DetalleProducto;
+
+{
+  /* <p className="descripcionAmplia">
+{producto ? producto.descripcionAmplia : "Cargando..."}
+</p>
+<p>
+{" "}
+<span className="text-success fw-bold"> Categoría: </span>
+{producto ? producto.categoria : "Cargando..."} <br />
+<span className="text-success fw-bold">Precio: $</span>  {producto ? producto.precio : "Cargando..."}
+</p> */
+}
