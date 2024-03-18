@@ -25,7 +25,7 @@ const CardProducto = ({producto}) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
-          <Link to={"detalle/" + producto.id}className="btn btn-success me-2">Ver más</Link>
+          <Link to={"detalle/" + producto._id}className="btn btn-success me-2">Ver más</Link>
         </Card.Footer>
       </Card>
     </Col>

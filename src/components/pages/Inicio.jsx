@@ -28,7 +28,7 @@ const Inicio = () => {
         <h1 className="mb-4 display-4">Nuestros Productos</h1>
         <Row>
         {productos.map((producto) => 
-            <CardProducto key={producto.id} producto={producto}/>
+            <CardProducto key={producto._id} producto={producto}/>
           )}
         </Row>
       </Container>
